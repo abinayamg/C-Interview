@@ -1,0 +1,96 @@
+/*
+#include <stdio.h> 
+  
+unsigned char swapNibbles(unsigned char x) 
+{ 
+    return ( (x & 0x0F)<<4 | (x & 0xF0)>>4 ); 
+} 
+  
+int main() 
+{ 
+    unsigned char x = 100; 
+    printf("%u", swapNibbles(x)); 
+    return 0; 
+}
+*/
+#include <stdio.h> 
+#define setbit(number,bit)(number|=(1<<bit-1))
+#define clearbit(number,bit)(number&=~(1<<bit-1)) 
+
+unsigned int reverseBits(unsigned int num) 
+{ 
+    unsigned int  NO_OF_BITS = sizeof(num) * 4; 
+printf("%d\n",NO_OF_BITS);
+    unsigned int reverse_num = 0, i, temp; 
+  
+    for (i = 0; i < NO_OF_BITS; i++) 
+    { 
+        temp = (num & (1 << i)); 
+        if(temp) 
+            reverse_num |= (1 << ((NO_OF_BITS - 1) - i)); 
+    } 
+   
+    return reverse_num; 
+} 
+
+void bin(unsigned n)
+{
+    unsigned i;
+    for (i = (1 << 15) ; i > 0; i = (i>>1))
+        if(n & i)
+			printf("1");
+		else
+			printf("0");
+       
+}
+unsigned int swapNibbles(unsigned int x) 
+{ 
+    return ( (x & 0x0F)<<4 | (x & 0xF0)>>4 ); 
+} 
+  
+int main() 
+{ 
+    unsigned char x = 100,z=2,l,i; 
+printf("%x\n", reverseBits(x)); 
+printf("%u\n", reverseBits(x)); 
+    unsigned int y=swapNibbles(x);
+ printf("MSB TO LSB SWAP A)=== %x\n", y);
+    //l=setbit(x,3);
+//printf("setbit %u\n", l);
+  //l=clearbit(y,2);
+//printf("clear bit %x\n", l);
+   
+
+	//bin(y);	
+	//printf("\n\n normal    : "); 
+
+for(i=2;i<16;i++)
+{ 
+l=clearbit(x,i);
+//bin(y);
+printf("\n");
+	
+i=i+3;
+
+	
+}
+/*
+for(i=3;i<16;i++)
+{ 
+l=setbit(l,i);
+bin(y);
+printf("\n");
+	
+i=i+3;
+
+	
+}
+*/
+l=setbit(l,3);
+printf("answer b)=== %x\n", l);
+
+	
+//printf("\n\n clear 2nd bit of 7    : "); 
+
+    return 0; 
+}

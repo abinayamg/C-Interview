@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+void bin(unsigned n)
+{
+static int count=0;    
+unsigned i;
+    for (i = (1 << 31) ; i > 0; i = (i>>1))
+        if(n & i){
+			printf("1");
+			count++;
+if (count%8==0)
+printf(" ");
+}
+		else{
+			printf("0");
+			count++;
+if (count%8==0)
+printf(" ");}
+
+       
+}
+int main()
+{
+int i=7,a;
+bin(i);
+//printf("%d",bin(i));
+return 0;
+}

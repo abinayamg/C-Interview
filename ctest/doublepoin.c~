@@ -1,0 +1,21 @@
+#include<stdio.h>
+void fun(int **asd)
+{
+printf("%d\n",**asd);
+int a=10,*ptr;
+ptr = &a;
+asd=&ptr;
+//return (asd);
+
+}
+
+int main()
+{
+int b=5,*zxc,**qwe;
+zxc=&b;
+qwe=&zxc;
+fun(&zxc);
+printf("%d\n",*zxc);
+printf("%d\n",**qwe);
+}
+
